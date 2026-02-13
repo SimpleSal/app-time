@@ -1,8 +1,8 @@
 ------------------------------------------
 
-   This file believes that this file is:   RELEASE  in the /SimpleSal/app-time repository root
+   This file thinks it is:   RELEASE  in the SimpleSal/app-time repository human metadata.
 
-   The managed object, for TSC LLC software, is a directory in the repo root (i.e. .\app-time).
+   The managed object, for TSC LLC repos, is a directory in the repo root (i.e., rr\app-time\).
 
 ------------------------------------------
 
@@ -32,29 +32,29 @@ TruSoft Computing LLC
 
  S~S Changes to a repository have been published by SimpleSal:
 
- GitHub username            simplesal
+ GitHub username            SimpleSal
 
    repository               app-time
 
      branch                 main-app-time
 
-       label on branch      release-260202
+       label on branch      release-260211
 
- Date of Publishment        February 2, 2026
+ Date of Publishment        February 11, 2026
 
- TSC LLC Version Identifier 260202
+ TSC LLC Version Identifier 260211
 
- Human version Identifier   v0.9a
+ Human version Identifier   v0.9b
 
 ------------------------------------------
 
 =====================
 
- S~S  Release notes version 260202: app-time repository activity: create the repository
+ S~S  Release note
 
 ------------------------------------------
 
-    Instantiate the repository version control database from file system version control database.
+    update to latest SimpleSal running with 95% complete example SimpleSal App.
 
 ------------------------------------------
 

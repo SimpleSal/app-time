@@ -1,8 +1,8 @@
 ------------------------------------------
 
-   This file believes that this file is:    README  in the /SimpleSal/app-time repository root
+   This file thinks it is:    README  in the SimpleSal/app-time repository human metadata.
 
-   The managed object, for TSC LLC software, is a directory in the repo root (i.e. .\app-time).
+   The managed object, for TSC LLC repos, is a directory in the repo root (i.e., rr\app-time\).
 
 ------------------------------------------
 
@@ -83,18 +83,18 @@
 
  S~S  What are the contents of this repository?
 
-   * The managed object is everything in the .\app-time\ directory
+   * The managed object is everything, and only that, in the rr\app-time\ directory
 
-       * .\app-time\app-time.ino
+       * this App works with any version of SimpleSal, therefore there is no rr\app-time\SimpleSal\
 
-       * .\app-time\*.h
+       * rr\app-time\app-time.ino
+
+       * rr\app-time\*.h
 
          the App depends on SimpleSal; the "mesa*.h" and "ss_configuration.h" file are derived from
-         the version of SimpleSal named in the release note (see /SimpleSal/simplesal/README).
+         the version of SimpleSal named in the release note (see SimpleSal/simplesal README).
 
        * because this App does not initiate any Events, the ssTEA helper for the API ia not used
-
-    * The managed object does NOT contain a .\SimpleSal copied from the /SimpleSal/simplesal repo.
 
     * TSC LLC promises industry-industry standard backwards compatibility: old stuff always works.
 
@@ -109,9 +109,13 @@
 
 ------------------------------------------
 
- S~S  What about the SimpleSal software the App co-exists with?
+ S~S  What about the version of the SimpleSal software the App co-exists with?
 
-    Visit the repo /SimpleSal/simplesal/main-simplesal to git a copy of the version named, or later.
+    SimpleSal promises backwards compatibility with older versions; basic features do not disappear.
+
+        This means users should be able to update to new versions, as needed, without side-effects.
+
+    Visit the username SimpleSal's repo named /simplesal, clone the latest "released" version tag.
 
 ------------------------------------------
 

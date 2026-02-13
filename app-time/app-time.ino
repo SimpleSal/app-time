@@ -71,9 +71,10 @@ typedef App_pEventDataDesc_t     App_pEventData_t;
 #include "SimpleSal\ss_include_dcl.h"
 
 // -------------------------------------------------------------------------------------------------
-// It is possible to have ssUI share user input with the App when it appears to be meant for the App.
+// The UI shared between the App and ssUI is simplified here by ssUI sending "app ..." input here.
 // -------------------------------------------------------------------------------------------------
 void        App_HeyProcessThis (pAsciiA_t  pReceivedInput);
+pAsciiA_t   pBuildBanner = S("<mesa [P39] and App [time] init...>");
 
 // -------------------------------------------------------------------------------------------------
 // This SimpleSal App is meant to build with "mesa_min_def.start" with extension changed to ".h".
@@ -112,8 +113,8 @@ void        App_HeyProcessThis (pAsciiA_t  pReceivedInput);
 // Higher baud rates increase the ability to display and so the App loop gets to run more often.
 // The value of displaying a Clock versus a Timer is based on the human's comparison to true Time.
 // -------------------------------------------------------------------------------------------------
-#define APP_ONEOF_CLOCK_OR_TIMER_IS_TIMER
-// #define APP_ONEOF_CLOCK_OR_TIMER_IS_CLOCK
+// #define APP_ONEOF_CLOCK_OR_TIMER_IS_TIMER
+#define APP_ONEOF_CLOCK_OR_TIMER_IS_CLOCK
 
 // =================================================================================================
 // -------------------------------------------------------------------------------------------------
@@ -194,9 +195,6 @@ void loop (void)        // (the App's original loop function, ssTEA calls as App
 // the ssHL compiler has seen and compiled "App_loop", and has not yet seen anything called "loop".
 
 // =================================================================================================
-// -------------------------------------------------------------------------------------------------
-// This version of ssTEA_setup for introductory SimpleSal App "app-time" is minimal where possible.
-// -------------------------------------------------------------------------------------------------
 #define ssTEA_setup  setup
 
 #define APP_BUFFER_ALLOC  (50)
@@ -205,26 +203,12 @@ void ssTEA_setup (void) // the one called by Arduino Host OS Api using the name 
 {
     AsciiA_t    localBuff[APP_BUFFER_ALLOC];
 
+    // ---------------------------------------------------------------------------------------------
+    // Call the original App's "setup", which was renamed to "App_setup" when the compiler found it.
+    // This is software written without ssTEA so it may continue to execute before ssTEA is launched.
+    // ---------------------------------------------------------------------------------------------
+    mesa_uiOp_emit_pAsciiA (pBuildBanner);
     App_setup ();
-
-#ifdef APP_ONEOF_CLOCK_OR_TIMER_IS_TIMER
-    ss_uiOp_qBanner (lfN, "Timer App initializing ssTEA...", lfY);
-#endif  // APP_ONEOF_CLOCK_OR_TIMER_IS_TIMER
-#ifdef APP_ONEOF_CLOCK_OR_TIMER_IS_CLOCK
-    ss_uiOp_qBanner (lfN, "Clock App initializing ssTEA...", lfY);
-#endif  // APP_ONEOF_CLOCK_OR_TIMER_IS_CLOCK
-
-    ssTEA_control.TimeState = ssTEA_state_stopped;
-    ssTEA_control.TimeBase = ssTEA_TimeBase_reality;
-
-    ssTEA_control.Agency_state = ssTEA_state_stopped;
-    ssTEA_control.Agency_pace = ssTEA_Agency_Pace_period;
-    ssTEA_control.Agency_period = 1;
-
-    ssTEA_control.Show_Path = false;            // set to true for extensive run-time messages
-    ssTEA_control.Show_Cause = false;
-    ssTEA_control.Show_Signals = false;
-    ssTEA_control.Show_Notes = false;
 
     ssTEA_InitState ();         // does not modify ssTEA_control.Time or ssTEA_control.Agency
 
@@ -245,7 +229,7 @@ void ssTEA_setup (void) // the one called by Arduino Host OS Api using the name 
     ss_uiOp_qBanner (lfN, "Clock App co-existing with ssTEA...", lfY);
 #endif  // APP_ONEOF_CLOCK_OR_TIMER_IS_CLOCK
 
-    ssTEA_control.TimeState = ssTEA_state_running;
+    ssTEA_control.Time_state = ssTEA_state_running;
     ssTEA_control.Agency_state = ssTEA_state_running;
 
     ss_uiOp_Show_ssTime_state ();
@@ -262,10 +246,17 @@ void ssTEA_setup (void) // the one called by Arduino Host OS Api using the name 
 // the ssHL compiler has seen and compiled "App_setup" and "setup"
 
 // =================================================================================================
-// -------------------------------------------------------------------------------------------------
-// This version of ssTEA_loop completely encapsulates ssTEA into the App it co-exists with.  Done.
-// -------------------------------------------------------------------------------------------------
-#define ssTEA_loop  loop
+// "App_loop" is the original Arduino App's "loop" function, which will now be granted agency
+// by ssTEA's "loop".  This was done by a #define trick in this file: rename the original App "loop"
+// to "App_loop" and rename "ssTEA_loop" to "loop".  The result is the linker sees two functions:
+// "App_loop" and "loop".  Instructions may be found elsewhere describing how to modify Original App.
+// =================================================================================================
+// This function should be usable as-is and used as-is if possible.  This is the central point of
+// Time within ssTEA when Agency granted by the Host OS has been intercepted, and Agency is granted
+// to ssTEA to manage Events, and then Agency is granted to the App to do whatever it does so well.
+// =================================================================================================
+#undef loop
+#define ssTEA_loop loop
 
 void ssTEA_loop (void)
 {
