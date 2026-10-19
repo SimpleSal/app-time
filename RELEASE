@@ -7,51 +7,38 @@
 
 TruSoft Computing LLC
 
- S~S  SimpleSal repository human metadata: RELEASE notes for the consumer
+ S~S  RELEASE metadata: "SimpleSal Time and Event Management" software.
 
 =====================
 
- S~S TruSoft Computing LLC (TSC LLC) Repository Philosophy
+ S~S Changes to a repository have been published by SimpleSal
 
 ------------------------------------------
 
- S~S  The Philosophy is stated somewhere else.
+ GitHub username                SimpleSal
 
-   The SimpleSal repository README explains how a SimpleSal App, such as this one, is constructed.
+   repository                   app-time
 
-   There is additional information available on the "substack.com" site for user "SimpleSal".
+     branch                     main-app-time
 
-------------------------------------------
+       label on branch          publish-261016
 
-=====================
+ Date of Publishment            October 16, 2026
 
-------------------------------------------
+ TSC LLC Version identifier     261016
 
- S~S Changes to a repository have been published by SimpleSal:
-
- GitHub username            SimpleSal
-
-   repository               app-time
-
-     branch                 main-app-time
-
-       label on branch      release-260211
-
- Date of Publishment        February 11, 2026
-
- TSC LLC Version Identifier 260211
-
- Human version Identifier   v0.9b
+ Human version identifier       v1.0.0
 
 ------------------------------------------
 
-=====================
+    SimpleSal Soft Open publishment
 
- S~S  Release note
+  This publishment implements the changes required to transition from the state of
+      big 'D', "Developing software" to the state of big 'P', "Publishing software".
 
-------------------------------------------
-
-    update to latest SimpleSal running with 95% complete example SimpleSal App.
+  Published software is coherent within the managed object or Blob.  Coherence means
+  the contents of the Blob in all forms (source files, algorithms, help documents)
+  relate to this instance of the software being published, using the same concepts.
 
 ------------------------------------------
 

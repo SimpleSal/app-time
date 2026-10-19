@@ -1,5 +1,5 @@
 
-   This file thinks it is:  CHANGELOG in the SimpleSal/app-time    repo root    
+   This file thinks it is:  CHANGELOG in the SimpleSal/app-time    repo root
 
 ------------------------------------------
 
@@ -7,27 +7,13 @@
 
 TruSoft Computing LLC
 
- S~S  SimpleSal repository human metadata: CHANGELOG of release information
+ S~S  SimpleSal repository human metadata: CHANGELOG of publishment information
 
 =====================
 
- S~S TruSoft Computing LLC (TSC LLC) Repository Philosophy
+ S~S Changes to a repository have been published by SimpleSal
 
 ------------------------------------------
-
- S~S  The Philosophy is stated somewhere else.
-
-   The SimpleSal repository README explains how a SimpleSal App, such as this one, is constructed.
-
-   There is additional information available on the "substack.com" site for user "simplesal".
-
-------------------------------------------
-
-=====================
-
-------------------------------------------
-
- S~S Changes to a repository have been published by SimpleSal:
 
  GitHub username            SimpleSal
 
@@ -35,7 +21,33 @@ TruSoft Computing LLC
 
      branch                 main-app-time
 
-       label on branch      release-260211
+       label on branch      publish-261016
+
+ Date of Publishment        October 16, 2026
+
+ TSC LLC Version identifier 261016
+
+ Human version identifier   v1.0.0
+
+------------------------------------------
+
+    SimpleSal Soft Open publishment
+
+------------------------------------------
+
+=====================
+
+ S~S Changes to a repository have been published by SimpleSal
+
+------------------------------------------
+
+ GitHub username            SimpleSal
+
+   repository               app-time
+
+     branch                 main-app-time
+
+       label on branch      (none)
 
  Date of Publishment        February 11, 2026
 
@@ -45,21 +57,15 @@ TruSoft Computing LLC
 
 ------------------------------------------
 
-=====================
-
- S~S  Release note
-
-------------------------------------------
-
     update to latest SimpleSal running with 95% complete example SimpleSal App.
 
 ------------------------------------------
 
 =====================
 
-------------------------------------------
+ S~S Changes to a repository have been published by SimpleSal
 
- S~S Changes to a repository have been published by SimpleSal:
+------------------------------------------
 
  GitHub username            SimpleSal
 
@@ -67,7 +73,7 @@ TruSoft Computing LLC
 
      branch                 main-app-time
 
-       label on branch      release-260202
+       label on branch      (none)
 
  Date of Publishment        February 2, 2026
 
@@ -76,8 +82,6 @@ TruSoft Computing LLC
  Human version Identifier   v0.9a
 
 ------------------------------------------
-
-=====================
 
  S~S  Release notes version 260202: app-time repository activity: create the repository
 
